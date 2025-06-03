@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="https://service-online.su/text/text-editor/ckeditor-full/contents.css">
+<style>body { font-family: Arial,Helvetica Neue,sans-serif; }</style>
+</head>
+<body class="cke_contents_ltr"><p>&lt;!DOCTYPE html&gt;<br />
+&lt;html lang=&quot;en&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp; &lt;meta charset=&quot;UTF-8&quot; /&gt;<br />
+&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;<br />
+&nbsp; &lt;title&gt;Раскрашивание кольца&lt;/title&gt;<br />
+&nbsp; &lt;style&gt;<br />
+&nbsp; &nbsp; body {<br />
+&nbsp; &nbsp; &nbsp; margin: 0;<br />
+&nbsp; &nbsp; &nbsp; padding: 0;<br />
+&nbsp; &nbsp; &nbsp; background: #111;<br />
+&nbsp; &nbsp; &nbsp; color: white;<br />
+&nbsp; &nbsp; &nbsp; font-family: sans-serif;<br />
+&nbsp; &nbsp; &nbsp; display: flex;<br />
+&nbsp; &nbsp; &nbsp; flex-direction: column;<br />
+&nbsp; &nbsp; &nbsp; align-items: center;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; .container {<br />
+&nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; width: 90%;<br />
+&nbsp; &nbsp; &nbsp; max-width: 600px;<br />
+&nbsp; &nbsp; &nbsp; margin-top: 40px;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; img {<br />
+&nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; display: block;<br />
+&nbsp; &nbsp; &nbsp; border-radius: 12px;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; #color {<br />
+&nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; top: 0;<br />
+&nbsp; &nbsp; &nbsp; left: 0;<br />
+&nbsp; &nbsp; &nbsp; clip-path: inset(0 100% 0 0);<br />
+&nbsp; &nbsp; &nbsp; transition: clip-path 0.05s linear;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &nbsp; input[type=&quot;range&quot;] {<br />
+&nbsp; &nbsp; &nbsp; width: 90%;<br />
+&nbsp; &nbsp; &nbsp; margin-top: 30px;<br />
+&nbsp; &nbsp; }<br />
+&nbsp; &lt;/style&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp; &lt;h2&gt;Проведи, чтобы раскрасить кольцо&lt;/h2&gt;<br />
+&nbsp; &lt;div class=&quot;container&quot;&gt;<br />
+&nbsp; &nbsp; &lt;img src=&quot;1.jpg&quot; alt=&quot;BW Image&quot; id=&quot;bw&quot;&gt;<br />
+&nbsp; &nbsp; &lt;img src=&quot;2.jpg&quot; alt=&quot;Color Image&quot; id=&quot;color&quot;&gt;<br />
+&nbsp; &lt;/div&gt;<br />
+&nbsp; &lt;input type=&quot;range&quot; id=&quot;slider&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;0&quot; /&gt;<br />
+&nbsp; &lt;script&gt;<br />
+&nbsp; &nbsp; const slider = document.getElementById(&quot;slider&quot;);<br />
+&nbsp; &nbsp; const color = document.getElementById(&quot;color&quot;);</p>
+
+<p>&nbsp; &nbsp; slider.oninput = function () {<br />
+&nbsp; &nbsp; &nbsp; const percent = 100 - this.value;<br />
+&nbsp; &nbsp; &nbsp; color.style.clipPath = `inset(0 ${percent}% 0 0)`;<br />
+&nbsp; &nbsp; };<br />
+&nbsp; &lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</p>
+
+</body>
+</html>
